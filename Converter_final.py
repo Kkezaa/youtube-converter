@@ -120,6 +120,8 @@ def checkbox_state():
 gui = Tk()
 gui.geometry("700x700")
 gui.title("Youtube to MP3 and MP4 Coverter")
+icon = PhotoImage(file="Templates/Iconn.png")
+gui.iconphoto(True, icon)
 
 Yt_label = Label(gui,text="Youtube to MP3 and MP4 Converter",fg = "Red",font=("Popins",25,"bold")) # Title
 Yt_label.place(relx = 0.5, rely = 0.2, anchor="center")
