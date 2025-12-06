@@ -89,12 +89,30 @@ def Convert_Clicked():
 
     if select_mp4:
         success, message = download(url, "mp4")
+
         if success:
             status_label.config(text="MP4: " + message, fg="green")
         else:
             status_label.config(text="MP4: " + message, fg = "red")
 
     Convert.config(state="normal")
+
+def checkbox_state():
+    """
+    This function checks whether the MP3 or MP4 checkox is checked
+    and disables the other one.
+    """
+    if mp3_var.get() == True:
+        mp4_check.config(state="disabled")
+        mp3_check.config(state="normal")
+        
+    elif mp4_var.get() == True:
+        mp3_check.config(state="disabled")
+        mp4_check.config(state="normal")
+    else:
+        mp3_check.config(state="normal")
+        mp4_check.config(state="normal")
+
 
 ### GUI ###
 
@@ -115,11 +133,11 @@ Convert.place(width = 90, height = 55, relx = 0.74, rely = 0.585)
 mp3_var = BooleanVar()
 mp4_var = BooleanVar()
 
-mp3_check = Checkbutton(gui, text = "MP3",font=("Popins",10,"bold"), variable = mp3_var) # MP3 Checkbox
+mp3_check = Checkbutton(gui, text = "MP3",font=("Popins",10,"bold"), variable = mp3_var, command = checkbox_state) # MP3 Checkbox
 mp3_check.place(relx = 0.3, rely = 0.4)
 
 
-mp4_check = Checkbutton(gui, text = "MP4",font=("Popins",10,"bold"), variable = mp4_var) #MP4 Checkbox
+mp4_check = Checkbutton(gui, text = "MP4",font=("Popins",10,"bold"), variable = mp4_var, command = checkbox_state) #MP4 Checkbox
 mp4_check.place(relx = 0.56, rely = 0.4)
 
 status_label = Label(gui, text="", fg= "black", font=("Popins", 10))
@@ -133,5 +151,4 @@ gui.mainloop()
 #Todo
 
 # Make a more appealing GUI
-# Change the checkbox logic so it doesn't overwrite
 # Fix the GUI freeze when clicking the convert button
