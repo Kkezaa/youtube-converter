@@ -1,27 +1,6 @@
-# .gitignore content
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
 venv/
+__pycache__/
+*.pyc
 .env
-.venv
-env.bak/
-venv.bak/
-
-# Virtual Environments
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-
-# Downloaded files (you probably don't want to commit these)
-Videos/
 Audios/
-
-# Dependencies
-*.egg-info/
-dist/
-build/
+Videos/

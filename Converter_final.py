@@ -1,3 +1,8 @@
+"""
+A script that takes a YouTube video URL and converts it into a mp4 or mp3 file.
+"""
+
+
 from tkinter import *
 from pytubefix import YouTube
 from pathlib import Path
