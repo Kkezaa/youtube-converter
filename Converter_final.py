@@ -78,6 +78,7 @@ def Convert_Clicked():
         return
 
     status_label.config(text="Downloading File... ", fg = "green")
+    status_label.update_idletasks()
 
 
     if select_mp3:
@@ -151,4 +152,3 @@ gui.mainloop()
 #Todo
 
 # Make a more appealing GUI
-# Fix the GUI freeze when clicking the convert button
